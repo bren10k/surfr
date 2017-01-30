@@ -33,24 +33,21 @@ def webhook():
 
 def processRequest(req):
     baseurl = "http://api.spitcast.com/api/spot/all"
-    yql_query = makeYqlQuery(req)
-    if yql_query is None:
-        return {}
-    yql_url = baseurl + "&format=json"
-    result = urllib.request.urlopen(yql_url).read()
+
+    result = urllib.request.urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
     return res
 
 
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    if city is None:
-        return None
+#def makeYqlQuery(req):
+#  result = req.get("result")
+#    parameters = result.get("parameters")
+#    city = parameters.get("geo-city")
+#    if city is None:
+#        return None
 
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
+#    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
 def makeWebhookResult(data):
