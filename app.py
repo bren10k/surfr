@@ -32,9 +32,7 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") != "yahooWeatherForecast":
-        return {}
-    baseurl = "https://query.yahooapis.com/v1/public/yql?"
+    baseurl = "http://api.spitcast.com/api/spot/all"
     yql_query = makeYqlQuery(req)
     if yql_query is None:
         return {}
