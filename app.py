@@ -52,13 +52,19 @@ def processRequest(req):
 
 
 def makeWebhookResult(data):
-  
+    
+    data1=data.get('data')
+   # request=data1.get('request')
+    weather=data1.get('weather')
+    
+    astronomy=weather.get('astronomy')
+
 
 
 
      print(json.dumps(item, indent=4))
 
-    speech = "Whoa" + data.get('moonrise') + "test"
+    speech = "Whoa" + astronomy.get('sunrise') + "test"
 
  
     #speech = "Hello there"
