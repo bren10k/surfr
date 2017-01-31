@@ -32,7 +32,7 @@ def webhook():
 
 
 def processRequest(req):
-    baseurl = "http://api.spitcast.com/api/spot/all"
+    baseurl = "http://api.spitcast.com/api/top/spots/"
 
     result = urllib.request.urlopen(baseurl).read()
     data = json.loads(result)
@@ -58,7 +58,7 @@ def makeWebhookResult(data):
     # print(json.dumps(item, indent=4))
 
     speech = "Today in " + data.get('county_name') + ": " + data.get('spot_name') + \
-             ", waves are " + data.get('temp') + " " + data.get('spot_id')
+             ", waves are " + data.get('spot_id')
 
     print("Response:")
     print(speech)
