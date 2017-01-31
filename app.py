@@ -57,7 +57,7 @@ def makeWebhookResult(data):
 
     # print(json.dumps(item, indent=4))
 
-    speech = "surfing in " + data.get('spot_name')
+    speech = data
     
     #" + data.get('avg_max_size') + \
    #          ", waves are " + data.get('spot_id')
