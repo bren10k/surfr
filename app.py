@@ -37,8 +37,8 @@ def processRequest(req):
     #result= "data,: request"
     result = urllib.request.urlopen(baseurl).read()
     #result = urllib.urlopen(baseurl).read()
-  #  data = json.loads(result)
-    data="hey"
+    data = json.loads(result)
+    #data="hey"
     res = makeWebhookResult(data)
     return res
 
