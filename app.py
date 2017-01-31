@@ -33,9 +33,9 @@ def webhook():
 
 
 def processRequest(req):
-   # baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q=20.7984,-156.3319&tp=24"
+    baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q=20.7984,-156.3319&tp=24"
     #result= "data,: request"
-  #  result = urllib.request.urlopen(baseurl).read()
+    result = urllib.request.urlopen(baseurl).read()
     #result = urllib.urlopen(baseurl).read()
   #  data = json.loads(result)
     data="hey"
