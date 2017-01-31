@@ -6,6 +6,7 @@ standard_library.install_aliases()
 import urllib.request, urllib.parse, urllib.error
 import json
 import os
+import urlopen
 
 from flask import Flask
 from flask import request
@@ -53,11 +54,11 @@ def processRequest(req):
 
 def makeWebhookResult(data):
     
-    data1=data.get('data')
+   # data1=data.get('data')
    # request=data1.get('request')
-    weather=data1.get('weather')
+   # weather=data1.get('weather')
     
-    astronomy=weather.get('astronomy')
+   # astronomy=weather.get('astronomy')
 
 
 
