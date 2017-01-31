@@ -55,10 +55,16 @@ def processRequest(req):
 
 def makeWebhookResult(data):
     
-    #data1=data.get('data')
+    data1=data.get('data')
+    if data1 is None:
+           return {
+               "speech":"databad"}
    # data2=data1.get('data')
     #request=data2.get('request')
-    weather=data.get('weather')
+    weather=data1.get('weather')
+     if weather is None:
+            return {
+               "speech":"weatherbad"}
     
    # astronomy=weather.get('astronomy')
 
