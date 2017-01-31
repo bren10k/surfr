@@ -22,11 +22,12 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = processRequest(req)
+   # res = processRequest(req)
 
-    res = json.dumps(res, indent=4)
+   # res = json.dumps(res, indent=4)
     # print(res)
-    r = make_response(res)
+   # r = make_response(res)
+    r = "hello"
     r.headers['Content-Type'] = 'application/json'
     return r
 
@@ -60,7 +61,7 @@ def makeWebhookResult(data):
  #   speech = "Today in " + data.get('spot_name') + ": " + data.get('avg_max_size') + \
   #           ", waves are " + data.get('spot_id')
  
-speech = "Hello there"
+    speech = "Hello there"
    
 
     print("Response:")
