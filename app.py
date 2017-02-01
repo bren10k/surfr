@@ -60,7 +60,7 @@ def makeWebhookResult(data):
     #request=data2.get('request')
     weather=data1.get('weather')
     zero=weather[0]
-    astronomy=zero.get('astronomy')
+    hourly=zero.get('hourly')
     
    # astronomy=weather.get('astronomy')
 
@@ -69,7 +69,7 @@ def makeWebhookResult(data):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Whoa" + astronomy[0].get('sunrise') + "test"
+    speech = "Whoa its " + hourly[0].get('swellHeight_ft') + "feet"
 
     
    # speech = "Hello there" 
