@@ -60,6 +60,10 @@ def makeYqlQuery(req):
         coor = "20.934431,-156.355957&tp=24"
     if beach == "south shore":
         coor ="20.626836,-156.443873&tp=24"
+    if beach == "west shore":
+        coor ="20.864596,-156.673628"
+    if beach == "east shore":
+        coor = "20.759070,-155.985446"
 
     return coor
     
