@@ -60,7 +60,7 @@ def makeWebhookResult(data):
     #request=data2.get('request')
     weather=data1.get('weather')
    # zero=weather.get('0')
-    astronomy=zero.get('astronomy')
+    astronomy=weather.get('astronomy')
     
    # astronomy=weather.get('astronomy')
 
