@@ -47,7 +47,7 @@ def processRequest(req):
 
 
 def makeYqlQuery(req):
-    result = req.get("result")
+    result = req.get('result')
     
     if result is None:
         return{}
@@ -73,7 +73,7 @@ def makeYqlQuery(req):
 #    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 def getCoor(data):
-    city=data.get('geo-city')
+    city = data.get('geo-city')
     beach = data.get('beach')
     
     citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
@@ -81,7 +81,7 @@ def getCoor(data):
     query = urllib.request.urlopen(queryurl).read()
     info = json.loads(query)
     
-    if city =! None:
+    #if city =! None:
         results=info.get('results')
         zero=results[0]
         geometry=zero.get('geometry')
