@@ -37,7 +37,7 @@ def processRequest(req):
     #result= "data,: request"
     
     query = makeYqlQuery(req)
-    surl = baseurl + query
+    surl = baseurl + urllib.parse.urlencode(query)
     result = urllib.request.urlopen(surl).read()
     #result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
@@ -51,7 +51,7 @@ def makeYqlQuery(req):
         parameters = result.get("parameters")
         city = parameters.get("geo-city")
         beach = parameters.get("beach")
-    if beach is "hookipa":
+    if beach is "north shore":
         return "20.934431,-156.355957&tp=24"
 
     return "20.626836,-156.443873&tp=24"
