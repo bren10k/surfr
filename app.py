@@ -52,9 +52,9 @@ def makeYqlQuery(req):
     if result is None:
         return{}
     parameters = result.get('parameters')
-    city = parameters.get('geo-city')
-    beach = parameters.get('beach')
-    coor = getCoor(parameters)
+   # city = parameters.get('geo-city')
+  #  beach = parameters.get('beach')
+    coord = getCoor(parameters)
    
    # if beach == "north shore":
    #     coor = "20.934431,-156.355957&tp=24"
@@ -65,7 +65,7 @@ def makeYqlQuery(req):
    # if beach == "east shore":
    #     coor = "20.759070,-155.985446&tp=24"
 
-    return coor
+    return coord
     
 #    if city is None:
 #        return None
@@ -74,12 +74,14 @@ def makeYqlQuery(req):
 
 def getCoor(data):
     city=data.get('geo-city')
-    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
-    query=citybaseurl + city
-    
-    
     beach = data.get('beach')
-    #if city =! None:
+    
+    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
+    queryurl=citybaseurl + city
+    query = urllib.request.urlopen(queryurl).read()
+    
+    
+    if city =! None:
         results=query.get('results')
         zero=results[0]
         geometry=zero.get('geometry')
@@ -88,7 +90,7 @@ def getCoor(data):
         long=location.get('lng')
         
         coor = lat +"," + lng
-      #  return coor
+        return coor
         
     if beach == "north shore":
         coor = "20.934431,-156.355957&tp=24"
