@@ -90,9 +90,9 @@ def getCoor(data):
         geometry=zero.get('geometry')
         location=geometry.get('location')
         lat=location.get('lat')
-        long=location.get('lng')
+        longi=location.get('lng')
         
-        coor = lat +"," + lng
+        coor = lat +"," + longi
         return coor
         
     if beach == "north shore":
