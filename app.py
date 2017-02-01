@@ -58,7 +58,7 @@ def makeWebhookResult(data):
     data1=data.get('data')
    # data2=data1.get('data')
     #request=data2.get('request')
-    weather=data1.get('weather')
+    weather=data1.get('request')
     
    # astronomy=weather.get('astronomy')
 
