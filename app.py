@@ -79,9 +79,10 @@ def getCoor(data):
     
     
     beach = parameters.get("beach")
-    if city=!"" 
-      results=query.get("results")
-        geometry=results[0].get("geometry")
+    if city =! None:
+        results=query.get("results")
+        zero=results[0]
+        geometry=zero.get("geometry")
         location=geometry.get("location")
         lat=location.get("lat")
         long=location.get("lng")
