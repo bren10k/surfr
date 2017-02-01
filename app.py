@@ -60,7 +60,7 @@ def makeWebhookResult(data):
     #request=data2.get('request')
     weather=data1.get('weather')
     zero=weather[0]
-    #astronomy=weather.get('astronomy')
+    astronomy=zero.get('astronomy')
     
    # astronomy=weather.get('astronomy')
 
@@ -69,10 +69,10 @@ def makeWebhookResult(data):
 
    #  print(json.dumps(item, indent=4))
 
-   # speech = "Whoa" + astronomy.get('sunrise') + "test"
+    speech = "Whoa" + astronomy.get('sunrise') + "test"
 
     
-    speech = "Hello there" 
+   # speech = "Hello there" 
    
 
     print("Response:")
@@ -81,7 +81,7 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-         "data": zero,
+         "data": astronomy,
       #  "weather" weather
         # "contextOut": [],
         #"source": "apiai-weather-webhook-sample"
