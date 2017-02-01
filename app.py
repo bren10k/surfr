@@ -78,7 +78,7 @@ def getCoor(data):
     query=citybaseurl + city
     
     
-    beach = parameters.get('beach')
+    beach = data.get('beach')
     if city =! None:
         results=query.get('results')
         zero=results[0]
