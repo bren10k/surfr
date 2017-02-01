@@ -69,7 +69,7 @@ def makeWebhookResult(data):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Whoa" + astronomy.get('sunrise') + "test"
+    speech = "Whoa" + astronomy[0].get('sunrise') + "test"
 
     
    # speech = "Hello there" 
