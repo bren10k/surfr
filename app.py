@@ -33,11 +33,11 @@ def webhook():
 
 
 def processRequest(req):
-    baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&"
+    baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q="
     #result= "data,: request"
     
     query = makeYqlQuery(req)
-    surl = baseurl + urllib.parse.urlencode({'q': query})
+    surl = baseurl + query
     result = urllib.request.urlopen(surl).read()
     #result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
@@ -47,11 +47,12 @@ def processRequest(req):
 
 
 def makeYqlQuery(req):
-      result = req.get("result")
-        parameters = result.get("parameters")
-        city = parameters.get("geo-city")
-        beach = parameters.get("beach")
-    if beach is "north shore":
+    result = req.get("result")
+    parameters = result.get("parameters")
+    city = parameters.get("geo-city")
+    beach = parameters.get("beach")
+   
+    if beach == "north shore":
         return "20.934431,-156.355957&tp=24"
 
     return "20.626836,-156.443873&tp=24"
