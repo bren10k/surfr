@@ -33,11 +33,11 @@ def webhook():
 
 
 def processRequest(req):
-    baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q="
+    baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&"
     #result= "data,: request"
     
     query = makeYqlQuery(req)
-    surl = baseurl + urllib.parse.urlencode(query)
+    surl = baseurl + urllib.parse.urlencode({'q': query})
     result = urllib.request.urlopen(surl).read()
     #result = urllib.urlopen(baseurl).read()
     data = json.loads(result)
