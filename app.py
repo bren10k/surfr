@@ -54,8 +54,41 @@ def makeYqlQuery(req):
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     beach = parameters.get("beach")
-    coor = "20.905798,-156.481892&tp=24"
+    coor = getCoor(parameters)
    
+   # if beach == "north shore":
+   #     coor = "20.934431,-156.355957&tp=24"
+   # if beach == "south shore":
+   #     coor ="20.626836,-156.443873&tp=24"
+   # if beach == "west shore":
+   #     coor ="20.864596,-156.673628&tp=24"
+   # if beach == "east shore":
+   #     coor = "20.759070,-155.985446&tp=24"
+
+    return coor
+    
+#    if city is None:
+#        return None
+
+#    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
+
+def getCoor(data):
+    city=data.get("geo-city")
+    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
+    query=citybaseurl + city
+    
+    
+    beach = parameters.get("beach")
+    if city=!"" 
+      results=query.get("results")
+        geometry=results[0].get("geometry")
+        location=geometry.get("location")
+        lat=location.get("lat")
+        long=location.get("lng")
+        
+        coor = lat +"," + lng
+        return coor
+        
     if beach == "north shore":
         coor = "20.934431,-156.355957&tp=24"
     if beach == "south shore":
@@ -66,13 +99,6 @@ def makeYqlQuery(req):
         coor = "20.759070,-155.985446&tp=24"
 
     return coor
-    
-#    if city is None:
-#        return None
-
-#    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
-
-
 def makeWebhookResult(data):
     
     data1=data.get('data')
