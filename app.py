@@ -36,7 +36,7 @@ def processRequest(req):
     baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q="
     #result= "data,: request"
     
-    query = makeYqlQuery(req)
+    query = getCoor(req)
     surl = baseurl + query
     result = urllib.request.urlopen(surl).read()
     #result = urllib.urlopen(baseurl).read()
@@ -46,15 +46,15 @@ def processRequest(req):
     return res
 
 
-def makeYqlQuery(req):
-    result = req.get('result')
+#def makeYqlQuery(req):
+  #  result = req.get('result')
     
-    if result is None:
-        return{}
+ #   if result is None:
+ ##       return{}
    
    # city = parameters.get('geo-city')
   #  beach = parameters.get('beach')
-    coord = getCoor(req)
+#    coord = getCoor(req)
    
    # if beach == "north shore":
    #     coor = "20.934431,-156.355957&tp=24"
@@ -65,7 +65,7 @@ def makeYqlQuery(req):
    # if beach == "east shore":
    #     coor = "20.759070,-155.985446&tp=24"
 
-    return coord
+ #   return coord
     
 #    if city is None:
 #        return None
