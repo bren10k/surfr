@@ -51,9 +51,9 @@ def makeYqlQuery(req):
     
     if result is None:
         return{}
-    parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    beach = parameters.get("beach")
+    parameters = result.get('parameters')
+    city = parameters.get('geo-city')
+    beach = parameters.get('beach')
     coor = getCoor(parameters)
    
    # if beach == "north shore":
@@ -73,19 +73,19 @@ def makeYqlQuery(req):
 #    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 def getCoor(data):
-    city=data.get("geo-city")
+    city=data.get('geo-city')
     citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
     query=citybaseurl + city
     
     
-    beach = parameters.get("beach")
+    beach = parameters.get('beach')
     if city =! None:
-        results=query.get("results")
+        results=query.get('results')
         zero=results[0]
-        geometry=zero.get("geometry")
-        location=geometry.get("location")
-        lat=location.get("lat")
-        long=location.get("lng")
+        geometry=zero.get('geometry')
+        location=geometry.get('location')
+        lat=location.get('lat')
+        long=location.get('lng')
         
         coor = lat +"," + lng
         return coor
