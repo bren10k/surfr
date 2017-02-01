@@ -48,14 +48,20 @@ def processRequest(req):
 
 def makeYqlQuery(req):
     result = req.get("result")
+    
+    if result is None:
+        return{}
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     beach = parameters.get("beach")
+    coor = "20.905798,-156.481892&tp=24"
    
     if beach == "north shore":
-        return "20.934431,-156.355957&tp=24"
+        coor = "20.934431,-156.355957&tp=24"
+    if beach == "south shore":
+        coor ="20.626836,-156.443873&tp=24"
 
-    return "20.626836,-156.443873&tp=24"
+    return coor
     
 #    if city is None:
 #        return None
@@ -79,7 +85,7 @@ def makeWebhookResult(data):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Whoa its " + hourly1.get('swellHeight_ft') + "feet"
+    speech = "Currently it is " + hourly1.get('swellHeight_ft') + " feet"
 
     
    # speech = "Hello there" 
