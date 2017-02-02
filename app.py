@@ -34,14 +34,14 @@ def webhook():
 
 def processRequest(req):
     baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q="
-    #result= "data,: request"
+ 
     
     query = getCoor(req)
     surl = baseurl + query
     result = urllib.request.urlopen(surl).read()
-    #result = urllib.urlopen(baseurl).read()
+
     data = json.loads(result)
-    #data="hey"
+
     res = makeWebhookResult(data)
     return res
 
@@ -92,9 +92,9 @@ def getCoor(data):
         lat=location.get('lat')
         longi=location.get('lng')
         
-        coor = lat +"," + longi
-        return coor
-        
+        return lat +"," + longi
+    else
+    
     if beach == "north shore":
         coor = "20.934431,-156.355957&tp=24"
     if beach == "south shore":
