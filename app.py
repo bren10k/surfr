@@ -99,7 +99,7 @@ def getCoor(data):
     info = json.loads(query)
     results=info.get('results')
     zero=results[0]
-    city1=zero.get('address_components')
+    city1=zero.get("address_components")
     zero2=city1[0]
     
     if zero2.get('long_name')=='Honolulu'
