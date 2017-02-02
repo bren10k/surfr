@@ -92,21 +92,27 @@ def getCoor(data):
         coor = "20.759070,-155.985446&tp=24"
         return coor
 
-        
+       
     citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
     queryurl=citybaseurl + city
     query = urllib.request.urlopen(queryurl).read()
     info = json.loads(query)
     results=info.get('results')
     zero=results[0]
+    city1=zero.get('address_components')
+    zero2=city1[0]
+    
+    if zero2.get('long_name')=='Honolulu'
+        return "20.934431,-156.355957&tp=24"
+    
     geometry=zero.get('geometry')
     location=geometry.get('location')
       #  lat=location.get('lat')
        # longi=location.get('lng')
-    coor="hey"    
+        
     coor= location.get('lat') + "," + location.get('lng')+ "&tp=24"
     
-    return coor
+    #return coor
 def makeWebhookResult(data):
     
     data1=data.get('data')
