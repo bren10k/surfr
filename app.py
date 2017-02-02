@@ -110,7 +110,7 @@ def getCoor(data):
     #lat=location.get('lat')
    # longi=location.get('lng')
         
-    coor= location['lat']+ location['lng']+ "&tp=24"
+    coor= location['lat'] + "," + location['lng'] + "&tp=24"
     
     return coor
 
