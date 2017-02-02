@@ -100,11 +100,11 @@ def getCoor(data):
     result1 = urllib.request.urlopen(yql_url).read()
     data1 = json.loads(result1)
     
-    qury=data1.get('query')
+    qury = data1.get('query')
     
-    result1 = qury.get('results')
+    result2 = qury.get('results')
     
-    channel = result1.get('channel')
+    channel = result2.get('channel')
     
     item = channel.get('item')
     
