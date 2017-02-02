@@ -1,6 +1,6 @@
 # Api.ai - Webhook for swell data
 
-Takes a city or beach and returns the swell data 
+Takes a city and returns the swell data 
 
 
 
