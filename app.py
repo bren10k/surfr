@@ -84,7 +84,7 @@ def getCoor(data):
     query = urllib.request.urlopen(queryurl).read()
     info = json.loads(query)
     
-    if city =! None:
+    if city =! "":
         results=info.get('results')
         zero=results[0]
         geometry=zero.get('geometry')
