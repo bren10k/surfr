@@ -79,30 +79,33 @@ def getCoor(data):
     city = parameters.get("geo-city")
     beach = parameters.get("beach")
     
+    if beach == "north shore":
+        coor = "20.934431,-156.355957&tp=24"
+        return coor
+    if beach == "south shore":
+        coor ="20.626836,-156.443873&tp=24"
+        return coor
+    if beach == "west shore":
+        coor ="20.864596,-156.673628&tp=24"
+        return coor
+    if beach == "east shore":
+        coor = "20.759070,-155.985446&tp=24"
+        return coor
+
         
-        citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
-        queryurl=citybaseurl + city
-        info = urllib.request.urlopen(queryurl).read()
-       #  info = json.loads(query)
-        results=info.get("results")
-        zero=results[0]
-        geometry=zero.get('geometry')
-        location=geometry.get('location')
+    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
+    queryurl=citybaseurl + city
+    query = urllib.request.urlopen(queryurl).read()
+    info = json.loads(query)
+    results=info.get('results')
+    zero=results[0]
+    geometry=zero.get('geometry')
+    location=geometry.get('location')
       #  lat=location.get('lat')
        # longi=location.get('lng')
         
-        coor= location.get('lat') +"," + location.get('lng')+ "&tp=24"
-  
+    coor= location.get('lat') +"," + location.get('lng')+ "&tp=24"
     
-    if beach == "north shore":
-        coor = "20.934431,-156.355957&tp=24"
-    if beach == "south shore":
-        coor ="20.626836,-156.443873&tp=24"
-    if beach == "west shore":
-        coor ="20.864596,-156.673628&tp=24"
-    if beach == "east shore":
-        coor = "20.759070,-155.985446&tp=24"
-
     return coor
 def makeWebhookResult(data):
     
