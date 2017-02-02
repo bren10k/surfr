@@ -103,8 +103,8 @@ def getCoor(data):
     location=geometry.get('location')
       #  lat=location.get('lat')
        # longi=location.get('lng')
-        
-    coor= location.get('lat') +"," + location.get('lng')+ "&tp=24"
+    coor="hey"    
+    coor= location.get('lat') + "," + location.get('lng')+ "&tp=24"
     
     return coor
 def makeWebhookResult(data):
