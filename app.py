@@ -79,12 +79,14 @@ def getCoor(data):
     city = parameters.get('geo-city')
     beach = parameters.get('beach')
     
-    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
-    queryurl=citybaseurl + city
-    query = urllib.request.urlopen(queryurl).read()
-    info = json.loads(query)
+   
     
     if not city:
+        
+        citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
+        queryurl=citybaseurl + city
+        query = urllib.request.urlopen(queryurl).read()
+        info = json.loads(query)
         results=info.get('results')
         zero=results[0]
         geometry=zero.get('geometry')
