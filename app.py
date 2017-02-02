@@ -99,11 +99,11 @@ def getCoor(data):
     info = json.loads(query)
     results=info.get('results')
     zero=results[0]
-    city1=zero.get("address_components")
-    zero2=city1[0]
+#    city1=zero.get("address_components")
+#    zero2=city1[0]
     
-    if zero2.get('long_name')=='Honolulu'
-        return "20.934431,-156.355957&tp=24"
+  #  if zero2.get('long_name')=='Honolulu'
+ #       return "20.934431,-156.355957&tp=24"
     
     geometry=zero.get('geometry')
     location=geometry.get('location')
@@ -113,6 +113,8 @@ def getCoor(data):
     coor= location.get('lat') + "," + location.get('lng')+ "&tp=24"
     
     return coor
+
+
 def makeWebhookResult(data):
     
     data1=data.get('data')
