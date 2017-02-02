@@ -95,8 +95,8 @@ def getCoor(data):
        
     citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
     queryurl=citybaseurl + city
-    info = urllib.request.urlopen(queryurl).read()
-   # info = json.loads(query)
+    query = urllib.request.urlopen(queryurl).read()
+    info = json.loads(query)
     results=info.get('results')
     zero=results[0]
 #    city1=zero.get("address_components")
@@ -110,7 +110,7 @@ def getCoor(data):
     #lat=location.get('lat')
    # longi=location.get('lng')
         
-    coor= str(location.get('lat')) + str(location.get('lng'))+ "&tp=24"
+    coor= location['lat']+ location['lng']+ "&tp=24"
     
     return coor
 
