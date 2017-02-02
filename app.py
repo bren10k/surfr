@@ -74,13 +74,12 @@ def processRequest(req):
 
 def getCoor(data):
     
-    result = data.get('result')
-    parameters = result.get('parameters')
-    city = parameters.get('geo-city')
-    beach = parameters.get('beach')
+    result = data.get("result")
+    parameters = result.get("parameters")
+    city = parameters.get("geo-city")
+    beach = parameters.get("beach")
     
    
-    
   #  if not city:
         
    #     citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
