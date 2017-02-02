@@ -92,8 +92,8 @@ def getCoor(data):
         lat=location.get('lat')
         longi=location.get('lng')
         
-        return lat +"," + longi
-    else
+        return lat +"," + longi+ "&tp=24"
+    
     
     if beach == "north shore":
         coor = "20.934431,-156.355957&tp=24"
