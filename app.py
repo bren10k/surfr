@@ -92,28 +92,54 @@ def getCoor(data):
         coor = "20.759070,-155.985446&tp=24"
         return coor
 
+    baseurl = "https://query.yahooapis.com/v1/public/yql?"
+    yql_query = makeYqlQuery(data)
+    if yql_query is None:
+        return {}
+    yql_url = baseurl + urllib.parse.urlencode({'q': yql_query}) + "&format=json"
+    result1 = urllib.request.urlopen(yql_url).read()
+    data1 = json.loads(result1)
+    
+    qury=data1.get('query')
+    
+    result1 = qury.get('results')
+    
+    channel = result1.get('channel')
+    
+    item = channel.get('item')
+    
+    
+    
        
-    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
-    queryurl=citybaseurl + city
-    query = urllib.request.urlopen(queryurl).read()
-    info = json.loads(query)
-    results=info.get('results')
-    zero=results[0]
+#    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
+#    queryurl=citybaseurl + city
+#    query = urllib.request.urlopen(queryurl).read()
+#    info = json.loads(query)
+#    results=info.get('results')
+  #  zero=results[0]
 #    city1=zero.get("address_components")
 #    zero2=city1[0]
     
   #  if zero2.get('long_name')=='Honolulu'
  #       return "20.934431,-156.355957&tp=24"
     
-    geometry=zero.get('geometry')
-    location=geometry.get('location')
-    lat=location['lat']
-    longi=location['lng']
-    lat=str(lat)
-    longi=str(longi)
-    coor= lat + longi + "&tp=24"
+  #  geometry=zero.get('geometry')
+  #  location=geometry.get('location')
+  #  lat=location['lat']
+   # longi=location['lng']
+    
+    coor= item.get('lat') + ","  + item.get('long') + "&tp=24"
     
     return coor
+
+def makeYqlQuery(req):
+    result = req.get("result")
+    parameters = result.get("parameters")
+    city = parameters.get("geo-city")
+    if city is None:
+        return None
+
+    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
 def makeWebhookResult(data):
