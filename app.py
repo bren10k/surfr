@@ -112,7 +112,7 @@ def getCoor(data):
         
     coor= location.get('lat') + "," + location.get('lng')+ "&tp=24"
     
-    #return coor
+    return coor
 def makeWebhookResult(data):
     
     data1=data.get('data')
