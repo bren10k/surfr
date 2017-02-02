@@ -46,32 +46,6 @@ def processRequest(req):
     return res
 
 
-#def makeYqlQuery(req):
-  #  result = req.get('result')
-    
- #   if result is None:
- ##       return{}
-   
-   # city = parameters.get('geo-city')
-  #  beach = parameters.get('beach')
-#    coord = getCoor(req)
-   
-   # if beach == "north shore":
-   #     coor = "20.934431,-156.355957&tp=24"
-   # if beach == "south shore":
-   #     coor ="20.626836,-156.443873&tp=24"
-   # if beach == "west shore":
-   #     coor ="20.864596,-156.673628&tp=24"
-   # if beach == "east shore":
-   #     coor = "20.759070,-155.985446&tp=24"
-
- #   return coord
-    
-#    if city is None:
-#        return None
-
-#    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
-
 def getCoor(data):
     
     result = data.get("result")
@@ -107,27 +81,6 @@ def getCoor(data):
     channel = result2.get('channel')
     
     item = channel.get('item')
-    
-    
-    
-       
-#    citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
-#    queryurl=citybaseurl + city
-#    query = urllib.request.urlopen(queryurl).read()
-#    info = json.loads(query)
-#    results=info.get('results')
-  #  zero=results[0]
-#    city1=zero.get("address_components")
-#    zero2=city1[0]
-    
-  #  if zero2.get('long_name')=='Honolulu'
- #       return "20.934431,-156.355957&tp=24"
-    
-  #  geometry=zero.get('geometry')
-  #  location=geometry.get('location')
-  #  lat=location['lat']
-   # longi=location['lng']
-    
     coor= item.get('lat') + ","  + item.get('long') + "&tp=24"
     
     return coor
@@ -145,8 +98,6 @@ def makeYqlQuery(req):
 def makeWebhookResult(data):
     
     data1=data.get('data')
-   # data2=data1.get('data')
-    #request=data2.get('request')
     weather=data1.get('weather')
     zero=weather[0]
     hourly=zero.get('hourly')
@@ -161,7 +112,6 @@ def makeWebhookResult(data):
     speech = "Currently it is " + hourly1.get('swellHeight_ft') + " feet"
 
     
-   # speech = "Hello there" 
    
 
     print("Response:")
@@ -171,9 +121,7 @@ def makeWebhookResult(data):
         "speech": speech,
         "displayText": speech,
      #    "data": astronomy,
-      #  "weather" weather
-        # "contextOut": [],
-        #"source": "apiai-weather-webhook-sample"
+
     }
 
 
