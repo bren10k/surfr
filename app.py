@@ -107,9 +107,10 @@ def getCoor(data):
     
     geometry=zero.get('geometry')
     location=geometry.get('location')
-    lat=location.get('lat')
-    longi=location.get('lng')
-        
+    lat=location['lat']
+    longi=location['lng']
+    lat=str(lat)
+    longi=str(longi)
     coor= lat + longi + "&tp=24"
     
     return coor
