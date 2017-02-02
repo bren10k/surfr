@@ -80,21 +80,21 @@ def getCoor(data):
     beach = parameters.get("beach")
     
    
-  #  if not city:
+    if not city:
         
-   #     citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
-  #      queryurl=citybaseurl + city
-  #      query = urllib.request.urlopen(queryurl).read()
-   #     info = json.loads(query)
-   #     results=info.get('results')
-   #     zero=results[0]
-   #     geometry=zero.get('geometry')
-    #    location=geometry.get('location')
-   #     lat=location.get('lat')
-   #     longi=location.get('lng')
+        citybaseurl="http://maps.googleapis.com/maps/api/geocode/json?address="
+        queryurl=citybaseurl + city
+        query = urllib.request.urlopen(queryurl).read()
+         info = json.loads(query)
+        results=info.get('results')
+        zero=results[0]
+        geometry=zero.get('geometry')
+        location=geometry.get('location')
+        lat=location.get('lat')
+        longi=location.get('lng')
         
-   #     return str(lat) +"," + str(longi)+ "&tp=24"
-  #  else
+        return str(lat) +"," + str(longi)+ "&tp=24"
+    else
     
     if beach == "north shore":
         coor = "20.934431,-156.355957&tp=24"
