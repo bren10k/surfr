@@ -72,7 +72,7 @@ def getCoor(data):
         coor = "20.779166,-156.490555&tp=24"
         return coor
     if beach == "Big Beach":
-        coor = "20.632863,-156.448751&tp24"
+        coor = "20.632863,-156.448751&tp=24"
         return coor
     
     
