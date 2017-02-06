@@ -68,6 +68,10 @@ def getCoor(data):
     if beach == "pipeline":
         coor = "21.662271,-158.052622&tp=24"
         return coor
+    if beach == "Maalaea":
+        coor = "20.779166,-156.490555&tp=24"
+        return coor
+    
     
 
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
