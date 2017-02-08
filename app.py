@@ -74,28 +74,28 @@ def getCoor(data):
     if beach == "Big Beach":
         coor = "20.632863,-156.448751&tp=24"
         return coor
-    if beach == "jaws"
+    if beach == "jaws":
         coor = "20.93861,-156.26083&tp=24"
         return coor
-    if beach == "kaisers"
+    if beach == "kaisers":
         coor = "21.280057,-157.840791&tp=24"
         return coor
-    if beach == "haleiwa"
+    if beach == "haleiwa":
         coor = "21.594145,-158.108148&tp=24"
         return coor
-    if beach == "sandy"
+    if beach == "sandy":
         coor = "21.287255,-157.669247&tp=24"
         return coor
-    if beach == "sunset"
+    if beach == "sunset":
         coor = "21.676104,-158.040433&tp=24"
         return coor
-    if beach == "kewalo"
+    if beach == "kewalo":
         coor = "21.290113,-157.859301&tp=24"
         return coor
-    if beach == "bellows"
+    if beach == "bellows":
         coor = "21.362532,-157.709341&tp=24"
         return coor
-    if beach == "makaha"
+    if beach == "makaha":
         coor = "21.469045,-158.223048&tp=24"
         return coor
     
