@@ -160,9 +160,13 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-     #    "data": astronomy,
+        "data": {
+            "google": {
+                "expect_user_response": "false",
+                 }
+            }
 
-    }
+          }
 
 
 if __name__ == '__main__':
