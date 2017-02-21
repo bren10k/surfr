@@ -98,6 +98,20 @@ def getCoor(data):
     if beach == "makaha":
         coor = "21.469045,-158.223048&tp=24"
         return coor
+    if beach == "glass":
+        coor = "21.901388,-159.587222&tp=24"
+        return coor
+    if beach == "hamoa":
+        coor = "20.723055,-155.989722&tp=24"
+        return coor
+    if beach == "kaanapali":
+        coor = "20.941944,-156.695833&tp24"
+        return coor
+    if beach == "kahana":
+        coor = "20.976666,-156.6825&tp24"
+        return coor
+    
+    
     
     
     
