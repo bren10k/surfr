@@ -145,33 +145,33 @@ def getCoor(data):
     
     
 
-    baseurl = "https://query.yahooapis.com/v1/public/yql?"
-    yql_query = makeYqlQuery(data)
-    if yql_query is None:
-        return {}
-    yql_url = baseurl + urllib.parse.urlencode({'q': yql_query}) + "&format=json"
-    result1 = urllib.request.urlopen(yql_url).read()
-    data1 = json.loads(result1)
+  #  baseurl = "https://query.yahooapis.com/v1/public/yql?"
+ #   yql_query = makeYqlQuery(data)
+  #  if yql_query is None:
+  #      return {}
+#    yql_url = baseurl + urllib.parse.urlencode({'q': yql_query}) + "&format=json"
+ #   result1 = urllib.request.urlopen(yql_url).read()
+  #  data1 = json.loads(result1)
+   # 
+ #   qury = data1.get('query')
+ #   
+ #   result2 = qury.get('results')
+ #   
+ #   channel = result2.get('channel')
     
-    qury = data1.get('query')
+ #   item = channel.get('item')
+  #  coor= item.get('lat') + ","  + item.get('long') + "&tp=24"
     
-    result2 = qury.get('results')
-    
-    channel = result2.get('channel')
-    
-    item = channel.get('item')
-    coor= item.get('lat') + ","  + item.get('long') + "&tp=24"
-    
-    return coor
+  #  return coor
 
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    if city is None:
-        return None
+#def makeYqlQuery(req):
+#   result = req.get("result")
+#    parameters = result.get("parameters")
+#    city = parameters.get("geo-city")
+#    if city is None:
+ #       return None
 
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
+  #  return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
 def makeWebhookResult(data):
@@ -188,7 +188,7 @@ def makeWebhookResult(data):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently it is " + hourly1.get('swellHeight_ft') + " feet with winds at "+ hourly1.get('windspeedMiles') + " miles per hour"
+    speech = "Currently it is " + hourly1.get('swellHeight_ft') + " feet with winds up to "+ hourly1.get('windspeedMiles') + " miles per hour"
 
     
    
