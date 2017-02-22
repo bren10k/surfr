@@ -110,6 +110,31 @@ def getCoor(data):
     if beach == "kahana":
         coor = "20.976666,-156.6825&tp24"
         return coor
+    if beach == "waimea":
+        coor = "21.643272,-158.069449&tp24"
+        return coor
+    if beach == "turtle bay":
+        coor = "21.701392,-157.999757&tp24"
+        return coor
+    if beach == "makapuu":
+        coor = "21.286325,-157.707475&tp24"
+        return coor
+    if beach == "lanikai":
+        coor = "21.393208,-157.715151&tp24"
+        return coor
+    if beach == "waikiki":
+        coor = "21.393208,-157.824686&tp24"
+        return coor
+    if beach == "ala moana":
+        coor = "21.289009,-157.849328&tp24"
+        return coor
+    if beach == "yokohama":
+        coor = "21.548557,-158.24319&tp24"
+        return coor
+    
+    
+      
+    
     
     
     
@@ -163,7 +188,7 @@ def makeWebhookResult(data):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently it is " + hourly1.get('swellHeight_ft') + " feet"
+    speech = "Currently it is " + hourly1.get('swellHeight_ft') + " feet with winds at "+ hourly1.get('windspeedMiles') + " miles per hour"
 
     
    
