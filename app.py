@@ -150,28 +150,28 @@ def getCoor(data):
     if beach == "Fleming":
         coor = "21.003055,-156.669444&tp24"
         return coor, beach
-    if beach == "Kahului Harbor"
+    if beach == "Kahului Harbor":
         coor = "20.894722,-156.476666&tp24"
         return coor, beach
-    if beach == "Kalama Beach"
+    if beach == "Kalama Beach":
         coor = "21.411944,-157.743888&tp24"
         return coor, beach
-    if beach == "Kapiolani"
+    if beach == "Kapiolani":
         coor = "21.27,-157.825277&tp24"
         return coor, beach
-    if beach == "Kipu Kai"
+    if beach == "Kipu Kai":
         coor = "21.913055,-159.392777&tp24"
         return coor, beach
-    if beach == "Lanikai"
+    if beach == "Lanikai":
         coor = "21.392222,-157.712&tp24"
         return coor, beach
-    if beach == "Hanalei"
+    if beach == "Hanalei":
         coor = "22.21444,-159.497777&tp24"
         return coor, beach
-    if beach == "Poipu"
+    if beach == "Poipu":
         coor = "21.878888,-159.4625&tp24"
         return coor, beach
-    if beach == "1000 peaks"
+    if beach == "1000 peaks":
         coor = "20.793256,-156.57285&tp24"
         return coor, beach
     
