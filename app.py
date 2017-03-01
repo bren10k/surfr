@@ -132,6 +132,16 @@ def getCoor(data):
     if beach == "yokohama":
         coor = "21.548557,-158.24319&tp24"
         return coor, beach
+    if beach == "Hookipa":
+        coor = "20.933214,-156.357524&tp24"
+        return coor, beach
+    if beach == "Pakus":
+        coor = "20.910280,-156.485560&tp24"
+        return coor, beach
+    if beach == "Honolua":
+        coor = "21.011896,-156.636854&tp24"
+        return coor, beach
+    
     
     
       
