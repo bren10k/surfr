@@ -27,11 +27,8 @@ def webhook():
 
     res = json.dumps(res, indent=4)
     # print(res)
-    result = req.get("result")
-    parameters = result.get("parameters")
-    beach = parameters.get("beach")
     
-    r = make_response(res, beach)
+    r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
 
@@ -40,13 +37,13 @@ def processRequest(req):
     baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q="
  
     
-    query = getCoor(req)
+    query, beach = getCoor(req)
     surl = baseurl + query
     result = urllib.request.urlopen(surl).read()
 
     data = json.loads(result)
 
-    res = makeWebhookResult(data)
+    res = makeWebhookResult(data, beach)
     return res
 
 
@@ -59,82 +56,82 @@ def getCoor(data):
     
     if beach == "north shore":
         coor = "20.934431,-156.355957&tp=24"
-        return coor
+        return coor, beach
     if beach == "south shore":
         coor ="20.626836,-156.443873&tp=24"
-        return coor
+        return coor, beach
     if beach == "west shore":
         coor ="20.864596,-156.673628&tp=24"
-        return coor
+        return coor, beach
     if beach == "east shore":
         coor = "20.759070,-155.985446&tp=24"
-        return coor
+        return coor, beach
     if beach == "pipeline":
         coor = "21.662271,-158.052622&tp=24"
-        return coor
+        return coor, beach
     if beach == "Maalaea":
         coor = "20.779166,-156.490555&tp=24"
-        return coor
+        return coor, beach
     if beach == "Big Beach":
         coor = "20.632863,-156.448751&tp=24"
-        return coor
+        return coor, beach
     if beach == "jaws":
         coor = "20.93861,-156.26083&tp=24"
-        return coor
+        return coor, beach
     if beach == "kaisers":
         coor = "21.280057,-157.840791&tp=24"
-        return coor
+        return coor, beach
     if beach == "haleiwa":
         coor = "21.594145,-158.108148&tp=24"
-        return coor
+        return coor, beach
     if beach == "sandy":
         coor = "21.287255,-157.669247&tp=24"
-        return coor
+        return coor, beach
     if beach == "sunset":
         coor = "21.676104,-158.040433&tp=24"
-        return coor
+        return coor, beach
     if beach == "kewalo":
         coor = "21.290113,-157.859301&tp=24"
-        return coor
+        return coor, beach
     if beach == "bellows":
         coor = "21.362532,-157.709341&tp=24"
-        return coor
+        return coor, beach
     if beach == "makaha":
         coor = "21.469045,-158.223048&tp=24"
-        return coor
+        return coor, beach
     if beach == "glass":
         coor = "21.901388,-159.587222&tp=24"
-        return coor
+        return coor, beach
     if beach == "hamoa":
         coor = "20.723055,-155.989722&tp=24"
-        return coor
+        return coor, beach
     if beach == "kaanapali":
         coor = "20.941944,-156.695833&tp24"
-        return coor
+        return coor, beach
     if beach == "kahana":
         coor = "20.976666,-156.6825&tp24"
-        return coor
+        return coor, beach
     if beach == "waimea":
         coor = "21.643272,-158.069449&tp24"
-        return coor
+        return coor, beach
     if beach == "turtle bay":
         coor = "21.701392,-157.999757&tp24"
-        return coor
+        return coor, beach
     if beach == "makapuu":
         coor = "21.286325,-157.707475&tp24"
-        return coor
+        return coor, beach
     if beach == "lanikai":
         coor = "21.393208,-157.715151&tp24"
-        return coor
+        return coor, beach
     if beach == "waikiki":
         coor = "21.393208,-157.824686&tp24"
-        return coor
+        return coor, beach
     if beach == "ala moana":
         coor = "21.289009,-157.849328&tp24"
-        return coor
+        return coor, beach
     if beach == "yokohama":
         coor = "21.548557,-158.24319&tp24"
-        return coor
+        return coor, beach
     
     
       
