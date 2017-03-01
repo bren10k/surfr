@@ -183,9 +183,9 @@ def makeWebhookResult(data,req):
     hourly1=hourly[0]
    # astronomy=weather.get('astronomy')
 
-    result = req.get("result")
-    parameters = result.get("parameters")
-    beach = parameters.get("beach")
+    result = req.get('result')
+    parameters = result.get('parameters')
+    beach = parameters.get('beach')
 
 
 
