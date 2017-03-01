@@ -27,7 +27,7 @@ def webhook():
 
     res = json.dumps(res, indent=4)
     # print(res)
-    r = make_response(res)
+    r = make_response(res,req)
     r.headers['Content-Type'] = 'application/json'
     return r
 
@@ -174,7 +174,7 @@ def getCoor(data):
   #  return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
-def makeWebhookResult(data):
+def makeWebhookResult(data,req):
     
     data1=data.get('data')
     weather=data1.get('weather')
@@ -183,12 +183,16 @@ def makeWebhookResult(data):
     hourly1=hourly[0]
    # astronomy=weather.get('astronomy')
 
+    result = req.get("result")
+    parameters = result.get("parameters")
+    beach = parameters.get("beach")
+
 
 
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently it is " + hourly1.get('swellHeight_ft') + " feet with winds up to "+ hourly1.get('windspeedMiles') + " miles per hour"
+    speech = "Currently at "+ beach +" it is " + hourly1.get('swellHeight_ft') + " feet with winds up to "+ hourly1.get('windspeedMiles') + " miles per hour"
 
     
    
