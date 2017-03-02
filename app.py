@@ -174,7 +174,15 @@ def getCoor(data):
     if beach == "1000 peaks":
         coor = "20.793256,-156.57285&tp24"
         return coor, beach
-    
+    if beach == "Waimea Bay":
+        coor = "21.641505,-158.067127&tp24"
+        return coor, beach
+    if beach == "Sugar Beach":
+        coor = "20.785005,-156.466944&tp24"
+        return coor, beach
+    if beach == "Wailea Beach":
+        coor = "20.681288,-156.441944&tp24"
+        return coor, beach
     
     
     
