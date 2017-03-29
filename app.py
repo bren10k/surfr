@@ -270,9 +270,9 @@ def getCoor(data):
 
 def makeWebhookResult(data, beach):
     
-    analysis=data.get('Analysis')
-    surfRange=analysis.get('surfRange')
-    zero=surfRange[0]
+    surf=data.get('Surf')
+    swellHeight=surf.get('swell_height1')
+    zero=swellHeight[0]
    
    # astronomy=weather.get('astronomy')
 
@@ -283,7 +283,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + zero
+    speech = "Currently at "+ beach +" it is " + zero[0]
 
     
    
