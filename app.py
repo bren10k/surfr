@@ -54,135 +54,172 @@ def getCoor(data):
     city = parameters.get("geo-city")
     beach = parameters.get("beach")
     
-    if beach == "north shore":
-        coor = "20.934431,-156.355957&tp=24"
-        return coor, beach
-    if beach == "south shore":
-        coor ="20.626836,-156.443873&tp=24"
-        return coor, beach
-    if beach == "west shore":
-        coor ="20.864596,-156.673628&tp=24"
-        return coor, beach
-    if beach == "east shore":
-        coor = "20.759070,-155.985446&tp=24"
-        return coor, beach
     if beach == "pipeline":
         coor = "4750"
         return coor, beach
     if beach == "Maalaea":
-        coor = "20.779166,-156.490555&tp=24"
+        coor = "7443"
         return coor, beach
     if beach == "Big Beach":
-        coor = "20.632863,-156.448751&tp=24"
+        coor = "5520"
         return coor, beach
     if beach == "jaws":
-        coor = "20.93861,-156.26083&tp=24"
+        coor = "10818"
         return coor, beach
     if beach == "kaisers":
         coor = "5536"
         return coor, beach
     if beach == "haleiwa":
-        coor = "21.594145,-158.108148&tp=24"
+        coor = "10834"
         return coor, beach
     if beach == "sandy":
-        coor = "21.287255,-157.669247&tp=24"
+        coor = "10837"
         return coor, beach
     if beach == "sunset":
-        coor = "21.676104,-158.040433&tp=24"
+        coor = "4746"
         return coor, beach
-    if beach == "kewalo":
-        coor = "21.290113,-157.859301&tp=24"
-        return coor, beach
-    if beach == "bellows":
-        coor = "21.362532,-157.709341&tp=24"
-        return coor, beach
+ 
     if beach == "makaha":
-        coor = "21.469045,-158.223048&tp=24"
+        coor = "10845"
         return coor, beach
-    if beach == "glass":
-        coor = "21.901388,-159.587222&tp=24"
-        return coor, beach
-    if beach == "hamoa":
-        coor = "20.723055,-155.989722&tp=24"
-        return coor, beach
-    if beach == "kaanapali":
-        coor = "20.941944,-156.695833&tp24"
-        return coor, beach
-    if beach == "kahana":
-        coor = "20.976666,-156.6825&tp24"
-        return coor, beach
+#    if beach == "glass":
+#        coor = "21.901388,-159.587222&tp=24"
+#        return coor, beach
+ #   if beach == "hamoa":
+ #       coor = "20.723055,-155.989722&tp=24"
+ #       return coor, beach
+#    if beach == "kaanapali":
+#        coor = "20.941944,-156.695833&tp24"
+#        return coor, beach
+#    if beach == "kahana":
+#        coor = "20.976666,-156.6825&tp24"
+#        return coor, beach
     if beach == "waimea":
-        coor = "21.643272,-158.069449&tp24"
+        coor = "4755"
         return coor, beach
     if beach == "turtle bay":
-        coor = "21.701392,-157.999757&tp24"
+        coor = "59599"
         return coor, beach
     if beach == "makapuu":
-        coor = "21.286325,-157.707475&tp24"
+        coor = "5540"
         return coor, beach
-    if beach == "lanikai":
-        coor = "21.393208,-157.715151&tp24"
+    if beach == "laniakea":
+        coor = "4759"
         return coor, beach
     if beach == "waikiki":
-        coor = "21.393208,-157.824686&tp24"
+        coor = "55536"
         return coor, beach
     if beach == "ala moana":
-        coor = "21.289009,-157.849328&tp24"
+        coor = "5538"
         return coor, beach
     if beach == "yokohama":
-        coor = "21.548557,-158.24319&tp24"
+        coor = "10844"
         return coor, beach
     if beach == "Hookipa":
-        coor = "20.933214,-156.357524&tp24"
+        coor = "10817"
         return coor, beach
-    if beach == "Pakus":
-        coor = "20.910280,-156.485560&tp24"
-        return coor, beach
+#    if beach == "Pakus":
+#        coor = "20.910280,-156.485560&tp24"
+#        return coor, beach
     if beach == "Honolua":
-        coor = "21.011896,-156.636854&tp24"
+        coor = "10814"
         return coor, beach
-    if beach == "Charley Young":
-        coor = "20.729722,-156.453055&tp24"
-        return coor, beach
-    if beach == "Bakers beach":
-        coor = "19.731111,-155.060833&tp24"
-        return coor, beach
-    if beach == "Fleming":
-        coor = "21.003055,-156.669444&tp24"
-        return coor, beach
+  #  if beach == "Charley Young":
+  #      coor = "20.729722,-156.453055&tp24"
+  #      return coor, beach
+ #   if beach == "Bakers beach":
+ #       coor = "19.731111,-155.060833&tp24"
+ #       return coor, beach
+#    if beach == "Fleming":
+#        coor = "21.003055,-156.669444&tp24"
+ #       return coor, beach
     if beach == "Kahului Harbor":
-        coor = "20.894722,-156.476666&tp24"
+        coor = "10816"
         return coor, beach
-    if beach == "Kalama Beach":
-        coor = "21.411944,-157.743888&tp24"
-        return coor, beach
-    if beach == "Kapiolani":
-        coor = "21.27,-157.825277&tp24"
-        return coor, beach
-    if beach == "Kipu Kai":
-        coor = "21.913055,-159.392777&tp24"
-        return coor, beach
-    if beach == "Lanikai":
-        coor = "21.392222,-157.712&tp24"
-        return coor, beach
+#    if beach == "Kalama Beach":
+#        coor = "21.411944,-157.743888&tp24"
+#        return coor, beach
+#    if beach == "Kapiolani":
+#        coor = "21.27,-157.825277&tp24"
+ #       return coor, beach
+#    if beach == "Kipu Kai":
+#        coor = "21.913055,-159.392777&tp24"
+#        return coor, beach
+#    if beach == "Lanikai":
+#        coor = "21.392222,-157.712&tp24"
+#        return coor, beach
     if beach == "Hanalei":
         coor = "22.21444,-159.497777&tp24"
         return coor, beach
-    if beach == "Poipu":
-        coor = "21.878888,-159.4625&tp24"
+#    if beach == "Poipu":
+#        coor = "21.878888,-159.4625&tp24"
+#        return coor, beach
+#    if beach == "1000 peaks":
+#        coor = "20.793256,-156.57285&tp24"
+#        return coor, beach
+#    if beach == "Sugar Beach":
+     #   coor = "20.785005,-156.466944&tp24"
+    #    return coor, beach
+   # if beach == "Wailea Beach":
+  #      coor = "20.681288,-156.441944&tp24"
+ #       return coor, beach
+    if beach == "Rockpiles":
+        coor = "4753"
         return coor, beach
-    if beach == "1000 peaks":
-        coor = "20.793256,-156.57285&tp24"
+    if beach == "Velzyland":
+        coor = "10833"
         return coor, beach
-    if beach == "Waimea Bay":
-        coor = "21.641505,-158.067127&tp24"
+    if beach == "Log Cabins":
+        coor = "4754"
         return coor, beach
-    if beach == "Sugar Beach":
-        coor = "20.785005,-156.466944&tp24"
+    if beach == "Barbers Point":
+        coor = "10847"
         return coor, beach
-    if beach == "Wailea Beach":
-        coor = "20.681288,-156.441944&tp24"
+    if beach == "Ewa Beach":
+        coor = "10848"
         return coor, beach
+    if beach == "Diamond Head":
+        coor = "4760"
+        return coor, beach
+    if beach == "Off the Wall":
+        coor = "4752"
+        return coor, beach
+    if beach == "Kahuku":
+        coor = "10841"
+        return coor, beach
+    if beach == "Olowalu":
+        coor = "10809"
+        return coor, beach
+    if beach == "La Perouse":
+        coor = "10811"
+        return coor, beach
+    if beach == "Kanaha":
+        coor = "10813"
+        return coor, beach
+    if beach == "Honomanu":
+        coor = "10819"
+        return coor, beach
+    if beach == "Tavares Bay":
+        coor = "108155"
+        return coor, beach
+    if beach == "Hana Bay":
+        coor = "10820"
+        return coor, beach
+    if beach == "The Cove":
+        coor = "10810"
+        return coor, beach
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
