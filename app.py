@@ -34,7 +34,7 @@ def webhook():
 
 
 def processRequest(req):
-    baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q="
+    baseurl = "http://api.surfline.com/v1/forecasts/"
  
     
     query, beach = getCoor(req)
@@ -67,7 +67,7 @@ def getCoor(data):
         coor = "20.759070,-155.985446&tp=24"
         return coor, beach
     if beach == "pipeline":
-        coor = "21.662271,-158.052622&tp=24"
+        coor = "4750"
         return coor, beach
     if beach == "Maalaea":
         coor = "20.779166,-156.490555&tp=24"
@@ -79,7 +79,7 @@ def getCoor(data):
         coor = "20.93861,-156.26083&tp=24"
         return coor, beach
     if beach == "kaisers":
-        coor = "21.280057,-157.840791&tp=24"
+        coor = "5536"
         return coor, beach
     if beach == "haleiwa":
         coor = "21.594145,-158.108148&tp=24"
@@ -233,11 +233,10 @@ def getCoor(data):
 
 def makeWebhookResult(data, beach):
     
-    data1=data.get('data')
-    weather=data1.get('weather')
-    zero=weather[0]
-    hourly=zero.get('hourly')
-    hourly1=hourly[0]
+    analysis=data.get('Analysis')
+    surfRange=analysis.get('surfRange')
+    zero=surfRange[0]
+   
    # astronomy=weather.get('astronomy')
 
     
@@ -247,7 +246,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + hourly1.get('swellHeight_ft') + " feet with wind speeds up to "+ hourly1.get('windspeedMiles') + " miles per hour"
+    speech = "Currently at "+ beach +" it is " + zero
 
     
    
