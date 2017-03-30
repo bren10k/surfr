@@ -244,7 +244,8 @@ def getCoor(data):
 def makeWebhookResult(data, beach):
     
     time=str(datetime.now())
-    hour=8#int(time[12]+time[13])
+    hour=time[12] + time[13]
+    hour=int(hour)
     period=0
     if hour <= 8:
         period=0
