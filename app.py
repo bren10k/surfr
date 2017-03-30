@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+from datetime import datetime
 from future import standard_library
 standard_library.install_aliases()
 import urllib.request, urllib.parse, urllib.error
@@ -270,9 +271,25 @@ def getCoor(data):
 
 def makeWebhookResult(data, beach):
     
+    time=str(datetime.now())
+    hour=int(time[12]+time[13])
+    period=0
+    if hour < 8:
+        period=0
+    if hour < 14:
+        period=1
+    if hour < 20:
+        period = 2
+    if hour < 24:
+        period = 3
+        
+ 
+    
     surf=data.get('Surf')
     swellHeight=surf.get('swell_height1')
     zero=swellHeight[0]
+    wind=data.get('Wind')
+    windSpeed=wind.get('wind_speed')
     
    # astronomy=weather.get('astronomy')
 
@@ -283,7 +300,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + str(zero[0])
+    speech = "Currently at "+ beach +" it is " + str(zero[0]) +" feet"
 
     
    
