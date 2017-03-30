@@ -245,9 +245,8 @@ def getCoor(data):
 
 def makeWebhookResult(data, beach):
     fmt = "%Y-%m-%d %H:%M:%S %Z%z"
-    now_utc = datetime.now(timezone('UTC'))
     now_hawaii = now_utc.astimezone(timezone('US/Hawaii'))
-    #time=str(datetime.now(pytz.utc))
+    time=str(datetime.now(timezone('UTC'))
     time = now_hawaii.strftime(fmt)
     tens = time[11] 
     print(tens)
