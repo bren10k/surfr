@@ -273,7 +273,7 @@ def makeWebhookResult(data, beach):
     surf=data.get('Surf')
     swellHeight=surf.get('swell_height1')
     zero=swellHeight[0]
-   
+    
    # astronomy=weather.get('astronomy')
 
     
@@ -283,7 +283,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + zero[0]
+    speech = "Currently at "+ beach +" it is " + str(zero[0])
 
     
    
