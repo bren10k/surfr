@@ -152,7 +152,7 @@ def getCoor(data):
 #        coor = "21.392222,-157.712&tp24"
 #        return coor, beach
     if beach == "Hanalei":
-        coor = "22.21444,-159.497777&tp24"
+        coor = "5522"
         return coor, beach
 #    if beach == "Poipu":
 #        coor = "21.878888,-159.4625&tp24"
@@ -211,6 +211,27 @@ def getCoor(data):
     if beach == "The Cove":
         coor = "10810"
         return coor, beach
+    if beach == "Mana Point":
+        coor = "10831"
+        return coor, beach
+    if beach == "Polihale":
+        coor = "10830"
+        return coor, beach
+    if beach == "Haena Bay":
+        coor = "5523"
+        return coor, beach
+    if beach == "Pakala":
+        coor = "5527"
+        return coor, beach
+    if beach == "PKs":
+        coor = "125523"
+        return coor, beach
+    
+    
+    
+    
+    
+    
     
     
     
