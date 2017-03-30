@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+import pytz
 from datetime import datetime
 from future import standard_library
 standard_library.install_aliases()
@@ -243,7 +244,8 @@ def getCoor(data):
 
 def makeWebhookResult(data, beach):
     
-    time=str(datetime.now())
+    time=str(datetime.now(pytz.utc))
+    time = time.astimezone(pytz.timezone('US/Hawaii'))
     tens = time[11] 
     print(tens)
    
