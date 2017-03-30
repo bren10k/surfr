@@ -269,6 +269,8 @@ def makeWebhookResult(data, beach):
  
     
     surf=data.get('Surf')
+    surf_min=surf.get('surf_min')
+    surf_max=surf.get('surf_max')
     swellHeight=surf.get('swell_height1')
     zero=swellHeight[0]
     wind=data.get('Wind')
@@ -283,7 +285,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + str(zero[period]) +" feet"
+    speech = "Currently at "+ beach +" it is " + str(surf_min) +" to " +str(surf_max)+ " feet"
 
     
    
