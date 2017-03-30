@@ -245,7 +245,10 @@ def makeWebhookResult(data, beach):
     
     time=str(datetime.now())
     tens = time[12] 
+    print(tens)
+   
     singles = time[13]
+    print(singles)
     hour=int(tens + singles)
     period=0
     if hour <= 8:
