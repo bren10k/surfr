@@ -67,7 +67,7 @@ def getCoor(data):
         coor = "20.759070,-155.985446&tp=24"
         return coor, beach
     if beach == "pipeline":
-        coor = "4750"
+        coor = "21.665553,-158.052948&tp=24"
         return coor, beach
     if beach == "Maalaea":
         coor = "20.779166,-156.490555&tp=24"
