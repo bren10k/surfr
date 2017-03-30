@@ -249,6 +249,7 @@ def makeWebhookResult(data, beach):
     now_hawaii = now_utc.astimezone(timezone('US/Hawaii'))
  #   time=str(datetime.now(timezone('UTC'))
     time = now_hawaii.strftime(fmt)
+    print(time)
     tens = time[11] 
     print(tens)
    
