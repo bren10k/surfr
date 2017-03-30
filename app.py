@@ -212,34 +212,6 @@ def getCoor(data):
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
   #  baseurl = "https://query.yahooapis.com/v1/public/yql?"
  #   yql_query = makeYqlQuery(data)
   #  if yql_query is None:
@@ -272,14 +244,14 @@ def getCoor(data):
 def makeWebhookResult(data, beach):
     
     time=str(datetime.now())
-    hour=int(time[12]+time[13])
+    hour=8#int(time[12]+time[13])
     period=0
-    if hour < 8:
+    if hour <= 8:
         period=0
-    if hour < 14:
+    if hour <= 14:
         period=1
-    if hour < 20:
-        period = 2
+    if hour <= 20:
+        period == 2
     if hour < 24:
         period = 3
         
