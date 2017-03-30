@@ -34,7 +34,7 @@ def webhook():
 
 
 def processRequest(req):
-    baseurl = "http://api.surfline.com/v1/forecasts/"
+    baseurl = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=41c9cef29f974bd48c2192134173101&format=json&q="
  
     
     query, beach = getCoor(req)
