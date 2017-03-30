@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
-import pytz
+
 from datetime import datetime
 from future import standard_library
 standard_library.install_aliases()
 import urllib.request, urllib.parse, urllib.error
 import json
 import os
+from pytz import timezone
 
 
 from flask import Flask
@@ -243,9 +244,11 @@ def getCoor(data):
 
 
 def makeWebhookResult(data, beach):
-    
-    time=str(datetime.now(pytz.utc))
-    time = time.astimezone(pytz.timezone('US/Hawaii'))
+    fmt = "%Y-%m-%d %H:%M:%S %Z%z"
+    now_utc = datetime.now(timezone('UTC'))
+    now_hawaii = now_utc.astimezone(timezone('US/Hawaii'))
+    #time=str(datetime.now(pytz.utc))
+    time = now_hawaii.strftime(fmt)
     tens = time[11] 
     print(tens)
    
