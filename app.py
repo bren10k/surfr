@@ -285,7 +285,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + str(surf_min) +" to " +str(surf_max)+ " feet"
+    speech = "Currently at "+ beach +" it is " + str(surf_min[period]) +" to " +str(surf_max[period])+ " feet"
 
     
    
