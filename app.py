@@ -244,10 +244,10 @@ def getCoor(data):
 def makeWebhookResult(data, beach):
     
     time=str(datetime.now())
-    tens = time[12] 
+    tens = time[11] 
     print(tens)
    
-    singles = time[13]
+    singles = time[12]
     print(singles)
     hour=int(tens + singles)
     period=0
