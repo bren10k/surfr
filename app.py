@@ -278,14 +278,18 @@ def makeWebhookResult(data, beach):
     print(singles)
     hour=int(tens + singles)
     period=0
-    if hour <= 8:
-        period=0
-    if hour <= 14:
-        period=1
-    if hour <= 20:
-        period == 2
     if hour < 24:
         period = 3
+    if hour <= 20:
+        period = 2
+    if hour <= 14:
+        period = 1
+    if hour <= 8:
+        period = 0
+        
+
+   
+
         
  
     
