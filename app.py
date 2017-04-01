@@ -167,7 +167,7 @@ def getCoor(data):
   #      coor = "20.681288,-156.441944&tp24"
  #       return coor, beach
     if beach == "Rockpiles":
-        coor = "4753"
+        coor = "5537"
         return coor, beach
     if beach == "Velzyland":
         coor = "10833"
@@ -226,6 +226,10 @@ def getCoor(data):
     if beach == "PKs":
         coor = "125523"
         return coor, beach
+    if beach == "Kailua":
+        coor = "10838"
+        return coor, beach
+    
     
     
     
