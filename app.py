@@ -229,6 +229,10 @@ def getCoor(data):
     if beach == "Kailua":
         coor = "10838"
         return coor, beach
+    if beach == "Lahaina Harbor":
+        coor = "5528"
+        return coor, beach
+    
     
     
     
