@@ -94,9 +94,9 @@ def getCoor(data):
 #    if beach == "kaanapali":
 #        coor = "20.941944,-156.695833&tp24"
 #        return coor, beach
-#    if beach == "kahana":
-#        coor = "20.976666,-156.6825&tp24"
-#        return coor, beach
+    if beach == "kahana":
+        coor = "10812"
+        return coor, beach
     if beach == "waimea":
         coor = "4755"
         return coor, beach
