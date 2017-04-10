@@ -216,21 +216,27 @@ def makeWebhookResult(data, beach):
     if hour < 24:
         period = 3
         windPeriod=7
+    if hour < 23:
+        windPeriod=6
     if hour <= 20:
         period = 2
-        windPeriod=6
-    if hour <=17:
         windPeriod=5
+    if hour < 17:
+        windPeriod=4
+    if hour < 14:
+        windPeriod=3
     if hour <= 14:
         windPeriod=4
         period = 1
-    if hour <= 11:
-        windPeriod=3
+    if hour < 11:
+        windPeriod=2
+    if hour < 8:
+        windPeriod=1
     if hour <= 8:
         windPeriod=2
         period = 0
-    if hour <= 5:
-        windPeriod=1
+    if hour < 5:
+        windPeriod=0
     if hour <= 2:
         windPeriod=0
         
@@ -255,7 +261,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + str(surf_minz[period]) +" to " +str(surf_maxz[period])+ " feet. With Wind Speeds of " + str(todayWindSpeed[windPeriod]) + " Miles per hour"
+    speech = "Currently at "+ beach +" it is " + str(surf_minz[period]) +" to " +str(surf_maxz[period])+ " feet. With Wind Speeds of " + str("{0:.2f}".format(todayWindSpeed[windPeriod])) + " Miles per hour"
 
     
    
