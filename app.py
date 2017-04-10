@@ -81,16 +81,9 @@ def getCoor(data):
     if beach == "sunset":
         coor = "4746"
         return coor, beach
- 
     if beach == "makaha":
         coor = "10845"
         return coor, beach
-#    if beach == "glass":
-#        coor = "21.901388,-159.587222&tp=24"
-#        return coor, beach
- #   if beach == "hamoa":
- #       coor = "20.723055,-155.989722&tp=24"
- #       return coor, beach
     if beach == "kaanapali":
         coor = "10812"
         return coor, beach
@@ -121,48 +114,18 @@ def getCoor(data):
     if beach == "Hookipa":
         coor = "10817"
         return coor, beach
-#    if beach == "Pakus":
-#        coor = "20.910280,-156.485560&tp24"
-#        return coor, beach
     if beach == "Honolua":
         coor = "10814"
         return coor, beach
-  #  if beach == "Charley Young":
-  #      coor = "20.729722,-156.453055&tp24"
-  #      return coor, beach
- #   if beach == "Bakers beach":
- #       coor = "19.731111,-155.060833&tp24"
- #       return coor, beach
-#    if beach == "Fleming":
-#        coor = "21.003055,-156.669444&tp24"
- #       return coor, beach
     if beach == "Kahului Harbor":
         coor = "10816"
         return coor, beach
-#    if beach == "Kalama Beach":
-#        coor = "21.411944,-157.743888&tp24"
-#        return coor, beach
-#    if beach == "Kapiolani":
-#        coor = "21.27,-157.825277&tp24"
- #       return coor, beach
-#    if beach == "Kipu Kai":
-#        coor = "21.913055,-159.392777&tp24"
-#        return coor, beach
-#    if beach == "Lanikai":
-#        coor = "21.392222,-157.712&tp24"
-#        return coor, beach
     if beach == "Hanalei":
         coor = "5522"
         return coor, beach
     if beach == "Poipu":
         coor = "5526"
         return coor, beach
-#    if beach == "1000 peaks":
-#        coor = "20.793256,-156.57285&tp24"
-#        return coor, beach
-#    if beach == "Sugar Beach":
-     #   coor = "20.785005,-156.466944&tp24"
-    #    return coor, beach
     if beach == "Wailea Beach":
         coor = "5521"
         return coor, beach
@@ -232,44 +195,6 @@ def getCoor(data):
     if beach == "Lahaina Harbor":
         coor = "5528"
         return coor, beach
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  #  baseurl = "https://query.yahooapis.com/v1/public/yql?"
- #   yql_query = makeYqlQuery(data)
-  #  if yql_query is None:
-  #      return {}
-#    yql_url = baseurl + urllib.parse.urlencode({'q': yql_query}) + "&format=json"
- #   result1 = urllib.request.urlopen(yql_url).read()
-  #  data1 = json.loads(result1)
-   # 
- #   qury = data1.get('query')
- #   
- #   result2 = qury.get('results')
- #   
- #   channel = result2.get('channel')
-    
- #   item = channel.get('item')
-  #  coor= item.get('lat') + ","  + item.get('long') + "&tp=24"
-    
-  #  return coor
-
-#def makeYqlQuery(req):
-#   result = req.get("result")
-#    parameters = result.get("parameters")
-#    city = parameters.get("geo-city")
-#    if city is None:
- #       return None
-
-  #  return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
 def makeWebhookResult(data, beach):
@@ -286,20 +211,29 @@ def makeWebhookResult(data, beach):
     print(singles)
     hour=int(tens + singles)
     period=0
+    windPeriod=0
+    
     if hour < 24:
         period = 3
+        windPeriod=7
     if hour <= 20:
         period = 2
+        windPeriod=6
+    if hour <=17:
+        windPeriod=5
     if hour <= 14:
+        windPeriod=4
         period = 1
+    if hour <= 11:
+        windPeriod=3
     if hour <= 8:
+        windPeriod=2
         period = 0
+    if hour <= 5:
+        windPeriod=1
+    if hour <= 2:
+        windPeriod=0
         
-
-   
-
-        
- 
     
     surf=data.get('Surf')
     surf_min=surf.get('surf_min')
@@ -310,6 +244,7 @@ def makeWebhookResult(data, beach):
     
     wind=data.get('Wind')
     windSpeed=wind.get('wind_speed')
+    todayWindSpeed= windSpeed[0]
     
    # astronomy=weather.get('astronomy')
 
@@ -320,7 +255,7 @@ def makeWebhookResult(data, beach):
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + str(surf_minz[period]) +" to " +str(surf_maxz[period])+ " feet"
+    speech = "Currently at "+ beach +" it is " + str(surf_minz[period]) +" to " +str(surf_maxz[period])+ " feet. With Wind Speeds of " + str(todayWindSpeed[windPeriod]) + " Miles per hour"
 
     
    
