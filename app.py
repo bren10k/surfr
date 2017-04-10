@@ -218,22 +218,18 @@ def makeWebhookResult(data, beach):
         windPeriod=7
     if hour < 23:
         windPeriod=6
-    if hour <= 20:
+    if hour < 20:
         period = 2
         windPeriod=5
     if hour < 17:
         windPeriod=4
     if hour < 14:
         windPeriod=3
-    if hour <= 14:
-        windPeriod=4
         period = 1
     if hour < 11:
         windPeriod=2
     if hour < 8:
         windPeriod=1
-    if hour <= 8:
-        windPeriod=2
         period = 0
     if hour < 5:
         windPeriod=0
