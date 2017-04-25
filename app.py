@@ -99,7 +99,7 @@ def getCoor(data):
     if beach == "Makapuu":
         coor = "5540"
         return coor, beach
-    if beach == "laniakea":
+    if beach == "Laniakea":
         coor = "4759"
         return coor, beach
     if beach == "Waikiki":
