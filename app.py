@@ -66,49 +66,49 @@ def getCoor(data):
     if beach == "Big Beach":
         coor = "5520"
         return coor, beach
-    if beach == "jaws":
+    if beach == "Jaws":
         coor = "10818"
         return coor, beach
-    if beach == "kaisers":
+    if beach == "Kaisers":
         coor = "5536"
         return coor, beach
-    if beach == "haleiwa":
+    if beach == "Haleiwa":
         coor = "10834"
         return coor, beach
-    if beach == "sandy":
+    if beach == "Sandy's":
         coor = "10837"
         return coor, beach
-    if beach == "sunset":
+    if beach == "Sunset":
         coor = "4746"
         return coor, beach
-    if beach == "makaha":
+    if beach == "Makaha":
         coor = "10845"
         return coor, beach
-    if beach == "kaanapali":
+    if beach == "Kaanapali":
         coor = "10812"
         return coor, beach
-    if beach == "kahana":
+    if beach == "Kahana":
         coor = "10812"
         return coor, beach
-    if beach == "waimea":
+    if beach == "Waimea Bay":
         coor = "4755"
         return coor, beach
-    if beach == "turtle bay":
+    if beach == "Turtle Bay":
         coor = "59599"
         return coor, beach
-    if beach == "makapuu":
+    if beach == "Makapuu":
         coor = "5540"
         return coor, beach
     if beach == "laniakea":
         coor = "4759"
         return coor, beach
-    if beach == "waikiki":
+    if beach == "Waikiki":
         coor = "55536"
         return coor, beach
-    if beach == "ala moana":
+    if beach == "Ala Moana":
         coor = "5538"
         return coor, beach
-    if beach == "yokohama":
+    if beach == "Yokohama":
         coor = "10844"
         return coor, beach
     if beach == "Hookipa":
