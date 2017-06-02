@@ -250,7 +250,7 @@ def makeWebhookResult(data, beach):
     
    # astronomy=weather.get('astronomy')
 
-   WindDir = wdir(wind, WindPeriod)
+    WindDir = wdir(wind, windPeriod)
 
 
 
