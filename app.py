@@ -250,14 +250,14 @@ def makeWebhookResult(data, beach):
     
    # astronomy=weather.get('astronomy')
 
-    
+   WindDir = wdir(wind, WindPeriod)
 
 
 
 
    #  print(json.dumps(item, indent=4))
 
-    speech = "Currently at "+ beach +" it is " + str(surf_minz[period]) +" to " +str(surf_maxz[period])+ " feet. With Wind Speeds of " + str("{0:.2f}".format(todayWindSpeed[windPeriod])) + " Miles per hour"
+    speech = "Currently at "+ beach +" it is " + str(surf_minz[period]) +" to " +str(surf_maxz[period])+ " feet. With " + WindDir + " Wind Speeds of " + str("{0:.2f}".format(todayWindSpeed[windPeriod])) + " Miles per hour"
 
     
    
@@ -276,7 +276,36 @@ def makeWebhookResult(data, beach):
 
           }
 
-
+def wdir(wind,period)
+    wind_direction = wind.get('wind_direction')
+    wdirToday = wind_direction[0]
+    wDegree = wdirToday[period]
+    
+    if wDegree >= 15 && wDegree < 45
+        direction = "North North East"
+    if wDegree > 60 && wDegree < 75
+        direction = "East North East"
+    if wDegree > 30 && wDegree < 60
+        direction = "North East"
+    if wDegree > 75 && wDegree <= 105
+        direction = "East"
+    if wDegree > 105 && wDegree <= 165
+        direction = "South East"
+    if wDegree > 165 && wDegree <= 195
+        direction = "South"
+    if wDegree > 195 && wDegree <= 255
+        direction = "South West"
+    if wDegree > 255 && wDegree <= 285
+        direction = "West"
+    if wDegree > 285 && wDegree <= 345
+        direction = "North West"
+    if wDegree > 345 && wDegree < 15
+        direction = "North"
+        
+    return direction
+    
+    
+    
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
 
