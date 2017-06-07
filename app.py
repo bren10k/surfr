@@ -112,11 +112,11 @@ def getCoor(data):
     if beach == "Yokohama":
         coor = "10844"
        
-    if beach == "Hookipa":
-        coor = "10817"
-        
     if beach == "Honolua":
         coor = "10814"
+        
+    if beach == "Hookipa":
+        coor = "10817"    
        
     if beach == "Kahului Harbor":
         coor = "10816"
