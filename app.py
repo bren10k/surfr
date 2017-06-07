@@ -59,143 +59,143 @@ def getCoor(data):
     
     if beach == "pipeline":
         coor = "4750"
-        return coor, beach
+        
     if beach == "Maalaea":
         coor = "7443"
-        return coor, beach
+       
     if beach == "Big Beach":
         coor = "5520"
-        return coor, beach
+        
     if beach == "Jaws":
         coor = "10818"
-        return coor, beach
+       
     if beach == "Kaisers":
         coor = "5536"
-        return coor, beach
+     
     if beach == "Haleiwa":
         coor = "10834"
-        return coor, beach
+    
     if beach == "Sandy's":
         coor = "10837"
-        return coor, beach
+       
     if beach == "Sunset":
         coor = "4746"
-        return coor, beach
+        
     if beach == "Makaha":
         coor = "10845"
-        return coor, beach
+      
     if beach == "Kaanapali":
         coor = "10812"
-        return coor, beach
+        
     if beach == "Kahana":
         coor = "10812"
-        return coor, beach
+       
     if beach == "Waimea Bay":
         coor = "4755"
-        return coor, beach
+        
     if beach == "Turtle Bay":
         coor = "59599"
-        return coor, beach
+       
     if beach == "Makapuu":
         coor = "5540"
-        return coor, beach
+       
     if beach == "Laniakea":
         coor = "4759"
-        return coor, beach
+       
     if beach == "Waikiki":
         coor = "55536"
-        return coor, beach
+       
     if beach == "Ala Moana":
         coor = "5538"
-        return coor, beach
+       
     if beach == "Yokohama":
         coor = "10844"
-        return coor, beach
+       
     if beach == "Hookipa":
         coor = "10817"
-        return coor, beach
+        
     if beach == "Honolua":
         coor = "10814"
-        return coor, beach
+       
     if beach == "Kahului Harbor":
         coor = "10816"
-        return coor, beach
+        
     if beach == "Hanalei":
         coor = "5522"
-        return coor, beach
+        
     if beach == "Poipu":
         coor = "5526"
-        return coor, beach
+        
     if beach == "Wailea Beach":
         coor = "5521"
-        return coor, beach
+        
     if beach == "Rockpiles":
         coor = "5537"
-        return coor, beach
+        
     if beach == "Velzyland":
         coor = "10833"
-        return coor, beach
+        
     if beach == "Log Cabins":
         coor = "4754"
-        return coor, beach
+        
     if beach == "Barbers Point":
         coor = "10847"
-        return coor, beach
+        
     if beach == "Ewa Beach":
         coor = "10848"
-        return coor, beach
+        
     if beach == "Diamond Head":
         coor = "4760"
-        return coor, beach
+        
     if beach == "Off the Wall":
         coor = "4752"
-        return coor, beach
+        
     if beach == "Kahuku":
         coor = "10841"
-        return coor, beach
+        
     if beach == "Olowalu":
         coor = "10809"
-        return coor, beach
+        
     if beach == "La Perouse":
         coor = "10811"
-        return coor, beach
+        
     if beach == "Kanaha":
         coor = "10813"
-        return coor, beach
+       
     if beach == "Honomanu":
         coor = "10819"
-        return coor, beach
+       
     if beach == "Tavares Bay":
         coor = "108155"
-        return coor, beach
+    
     if beach == "Hana Bay":
         coor = "10820"
-        return coor, beach
+       
     if beach == "The Cove":
         coor = "10810"
-        return coor, beach
+   
     if beach == "Mana Point":
         coor = "10831"
-        return coor, beach
+       
     if beach == "Polihale":
         coor = "10830"
-        return coor, beach
+        
     if beach == "Haena Bay":
         coor = "5523"
-        return coor, beach
+      
     if beach == "Pakala":
         coor = "5527"
-        return coor, beach
+       
     if beach == "PKs":
         coor = "125523"
-        return coor, beach
+        
     if beach == "Kailua":
         coor = "10838"
-        return coor, beach
+      
     if beach == "Lahaina Harbor":
         coor = "5528"
-        return coor, beach
-
+        
+    return coor, beach
 
 def makeWebhookResult(data, beach):
     fmt = "%Y-%m-%d %H:%M:%S %Z%z"
