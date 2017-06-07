@@ -56,6 +56,7 @@ def getCoor(data):
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     beach = parameters.get("beach")
+    coor="0000"
     
     if beach == "pipeline":
         coor = "4750"
