@@ -39,7 +39,7 @@ def webhook():
 def processRequest(req):
     baseurl = "http://api.surfline.com/v1/forecasts/"
  
-    result = req.get("result")
+    result = req.get("queryresult")
     
     query, beach = getCoor(result)
     surl = baseurl + query
@@ -53,8 +53,8 @@ def processRequest(req):
 
 def getCoor(data):
     
-    result = data.get("result")
-    parameters = result.get("parameters")
+    #result = data.get("result")
+    parameters = data.get("parameters")
    
     beach = parameters.get("beach")
     coor="0000"
