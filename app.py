@@ -267,13 +267,7 @@ def makeWebhookResult(data, beach):
     print(speech)
 
     return {
-        "speech": speech,
-        "displayText": speech,
-        "data": {
-            "google": {
-                "expect_user_response": "false",
-                 }
-            }
+        "fulfillmentText": speech
 
           }
 
